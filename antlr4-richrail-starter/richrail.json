@@ -1,0 +1,1 @@
+{"trains":[{"locomotive":{"name":"train1318"},"wagons":[],"id":36},{"locomotive":{"name":"train1320"},"wagons":[{"id":42,"seats":20,"train_id":37,"name":"train1320nr1","wagonType":"wagonOne"},{"id":43,"seats":20,"train_id":37,"name":"train1320nr2","wagonType":"wagonTwo"}],"id":37}]}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<richrail>
+    <trains>
+        <locomotive>
+            <name>train1318</name>
+        </locomotive>
+        <id>36</id>
+    </trains>
+    <trains>
+        <locomotive>
+            <name>train1320</name>
+        </locomotive>
+        <wagons>
+            <id>42</id>
+            <seats>20</seats>
+            <train_id>37</train_id>
+            <name>train1320nr1</name>
+            <wagonType>wagonOne</wagonType>
+        </wagons>
+        <wagons>
+            <id>43</id>
+            <seats>20</seats>
+            <train_id>37</train_id>
+            <name>train1320nr2</name>
+            <wagonType>wagonTwo</wagonType>
+        </wagons>
+        <id>37</id>
+    </trains>
+</richrail>

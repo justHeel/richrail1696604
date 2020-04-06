@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.control.ScrollPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="876.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.richrail.controller.RichRailController">
+   <children>
+      <AnchorPane layoutY="52.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <TextFlow fx:id="clbox" prefHeight="235.0" prefWidth="436.0" style="-fx-background-color: black;" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="436.0" layoutY="52.0" prefHeight="200.0" prefWidth="200.0">
+         <children>
+         <ScrollPane fx:id="sp" prefHeight="235.0" prefWidth="436.0">
+         	<content>
+         		<TextFlow fx:id="textbox" prefWidth="430.0" style="-fx-background-color: grey;" />
+         	</content>
+         </ScrollPane>
+           
+         </children>
+      </AnchorPane>
+      <ToolBar layoutY="7.0" prefHeight="45.0" prefWidth="874.0">
+        <items>
+        
+          <Button fx:id="btnCommand" mnemonicParsing="false" onAction="#antlrCommandReader" text="Send" />
+          
+            <TextField fx:id="tfCommand" onAction="#antlrCommandReader" prefHeight="31.0" prefWidth="777.0" />
+        </items>
+      </ToolBar>
+      <AnchorPane layoutY="287.0" prefHeight="287.0" prefWidth="436.0">
+         <children>
+            <TabPane prefHeight="287.0" prefWidth="436.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Train">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: yellow;">
+                           <children>
+                            <Button fx:id="btnSave" layoutX="22.0" layoutY="20.0" mnemonicParsing="false" onAction="#saveToJSONAndXML" text="Save to JSON and XML" />
+                              <TextField fx:id="tfTrainName" layoutX="22.0" layoutY="54.0" text="name" />
+                              <Button fx:id="btnCreateTrain" layoutX="218.0" layoutY="53.0" mnemonicParsing="false" onAction="#tfCreateTrain" text="Create" />
+                              <ComboBox fx:id="cbTrains" layoutX="22.0" layoutY="93.0" prefHeight="31.0" prefWidth="187.0" />
+                              <Button fx:id="btnSelectTrain" layoutX="217.0" layoutY="93.0" mnemonicParsing="false" onAction="#selectTrain" prefHeight="31.0" prefWidth="65.0" text="Select" />
+                              <Button fx:id="btnRemoveTrain" layoutX="295.0" layoutY="93.0" mnemonicParsing="false" onAction="#deleteTrain" text="Remove" />
+                              <Button fx:id="btnRefresh" layoutX="298.0" layoutY="132.0" mnemonicParsing="false" onAction="#refreshTrainList" prefHeight="31.0" prefWidth="70.0" text="Refresh" />
+                              <Button fx:id="btnOpenScreen" layoutX="34.0" layoutY="190.0" mnemonicParsing="false" onAction="#openNewScreen" text="Open" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Wagon">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: yellow;">
+                           <children>
+                              <Button fx:id="btnCreateWagon" layoutX="207.0" layoutY="62.0" mnemonicParsing="false" onAction="#tfCreateWagon" text="Create" />
+                              <Button fx:id="btnSelectWagon" layoutX="208.0" layoutY="109.0" mnemonicParsing="false" onAction="#selectWagon" prefHeight="31.0" prefWidth="66.0" text="Select" />
+                              <Button fx:id="btnRemoveWagon" layoutX="284.0" layoutY="109.0" mnemonicParsing="false" onAction="#deleteWagon" text="Remove" />
+                              <TextField fx:id="tfWagonName" layoutX="10.0" layoutY="62.0" text="name" />
+                              <ComboBox fx:id="cbWagons" layoutX="14.0" layoutY="109.0" prefHeight="31.0" prefWidth="182.0" />
+                              <ComboBox fx:id="cbWagonTypes" layoutX="14.0" layoutY="158.0" prefHeight="31.0" prefWidth="182.0" />
+                              <Button fx:id="btnWagonRefresh" layoutX="288.0" layoutY="151.0" mnemonicParsing="false" onAction="#refreshWagonList" prefHeight="31.0" prefWidth="71.0" text="Refresh" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="pnlwagon" layoutX="438.0" layoutY="287.0" prefHeight="287.0" prefWidth="436.0" style="-fx-background-color: purple;">
+         <children>
+           
+            <Canvas fx:id="canvasRichRail" height="287.0" width="436.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
